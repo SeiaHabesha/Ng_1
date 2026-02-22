@@ -1,0 +1,60 @@
+#my_first drone
+import time
+
+class Drone:
+	
+	def __init__(self,brand,year):
+		self.brand=brand
+		self.year=year
+		self.is_flying=False
+		self.odometer=0
+		self.battery=30
+		self.speed=0
+		self.mission=1000
+
+	def move(self,km):
+		
+		if self.battery<=0:
+			print("run out of battery  please charge  the drone!!")
+			return
+		if not self.is_flying:
+			print(f"{self.brand} {self.year}drone is  start tomove ")
+			self.is_flying=True
+		
+		self.odometer+=km
+		self.battery -=10
+		self.speed +=10000
+		print(f"{self.brand} {self.year} drone has gone {self.odometer} kms ")
+		print(f"the drone is flying by {self.speed}m/s")
+		print(f"charge remains {self.battery}% ")	
+		target=self.mission - self.odometer
+		if target==0:
+			print(f"{self.brand} is on targeted area !")
+			time.sleep(3)
+			print("MISSIO SUCESSFULL!!!")
+		elif target<0:
+			print("the drone is  out of his target! ")
+		else:
+			print(f"the drone {self.brand}  {self.year} is{target}km  far from target")
+			
+	def stop(self):
+		print(f"{self. brand} {self.year}  drone is stoped  after {self.odometer}km  journy !!")
+		
+		
+	def charge(self):
+		if self.battery<10:
+			print("CHARGING!...")
+			time.sleep(5)
+			print("THE DRONE IS CHARGED! REDY TO FLY ")
+			self.battery=100
+			
+my_drone=Drone("crazy_1",2026)
+my_drone.move(50)
+my_drone.move(10)
+my_drone.move(200)
+my_drone.stop()	
+my_drone.move(100)
+my_drone.move(200)
+my_drone.charge()
+my_drone.move(200)
+my_drone.move(540)
