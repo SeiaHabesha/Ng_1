@@ -1,0 +1,39 @@
+import random
+import time
+print("----------እንኳን ደሕና መጡ!---------")
+
+print("-_-_-_-_-_ይሕ የቁጥር መገመትጨዋታ ነው-_-_-_-_-_-_")
+
+print("~~~~~~ሥለተጫዎቱ እናመሠግ ናለን~~~~~~~~~~")
+print("ይጀምሩ")
+maximum_limit=3
+#ሙከራ=maximum 
+for seconds in range (3,0 ,-1):
+	print(seconds)
+	time.sleep(1)
+ቁጥር=random.randint(1,15)
+አሸንፏል = False
+
+while maximum_limit >0 :
+   print(f"\n remaind guess {maximum_limit}")
+   ግምት=int(input("ቁጥሩን ይገምቱ:  "))
+   
+  
+   if ቁጥር== ግምት:
+   	print("ጎበዝ ገምተዋል  ")
+   	
+   	አሸንፏል = True
+   	break
+
+   
+   if ግምት < ቁጥር :
+   	print("ይጨምሩ ")
+   if ግምት >ቁጥር:
+   	print("ይቀንሱ ")
+   maximum_limit -=1
+   
+if not አሸንፏል :
+	print(f"you lose!! the number  was {ቁጥር}")
+   	
+   	
+	   
