@@ -1,8 +1,9 @@
+
 from tkinter import *
 
 root = Tk()
 root.title('VIRTUAL KEYBOARD - FULL VERSION')
-root.geometry('1100x650')
+root.geometry('1200x650')
 root.config(bg='#2c3e50')
 root.attributes('-topmost', True)
 
