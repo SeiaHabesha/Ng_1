@@ -15,8 +15,7 @@ from sklearn.metrics import r2_score
 
 x = np.array([[1], [2], [3], [4], [5], [6]])
 y = np.array([10, 20, 30, 42, 50, 60]) 
-model = LinearRegression()
-model.fit(x, y)
+
 
 # 2. Initialize and train the Linear Regression model
 model = LinearRegression()
