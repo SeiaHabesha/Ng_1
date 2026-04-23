@@ -14,7 +14,7 @@ class Drone:
 
 	def move(self,km):
 		
-		if self.battery<=0:
+		if self.battery<=10:
 			print("run out of battery  please charge  the drone!!")
 			return
 		if not self.is_flying:
